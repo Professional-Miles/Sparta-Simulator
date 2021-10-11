@@ -6,6 +6,7 @@ public class Sparta {
 
     private ArrayList<Integer> trainees = new ArrayList<>();
     private ArrayList<Integer> centres = new ArrayList<>();
+    private int months;
     private static Sparta spartaInstance = null;
 
     public static Sparta getInstance(){
@@ -29,5 +30,13 @@ public class Sparta {
 
     public void setCentres(ArrayList<Integer> centres) {
         this.centres = centres;
+    }
+
+    public int getMonths() {
+        return months;
+    }
+
+    public void setMonths(int months) {
+        this.months = months;
     }
 }

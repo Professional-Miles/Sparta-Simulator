@@ -1,5 +1,6 @@
 package com.sparta.simulator.view;
 
+import com.sparta.simulator.model.Sparta;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import java.util.NoSuchElementException;
@@ -12,6 +13,8 @@ public class UserInput {
 
     public static void getMonths(){
 
+        Sparta sparta = Sparta.getInstance();
+
         boolean status = true;
         while (status) {
             System.out.print(DisplayManager.getDisplaySimTime());
@@ -20,6 +23,7 @@ public class UserInput {
                 int num = scanner.nextInt();
                 if (num >= 1) {
                     System.out.println("\nSimulation will run for " + num + " months.");
+                    sparta.setMonths(num);
                     status = false;
                 } else {
                     System.out.println("\n\tPlease enter a value larger than 0...\n");
