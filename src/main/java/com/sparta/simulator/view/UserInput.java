@@ -22,7 +22,7 @@ public class UserInput {
                 Scanner scanner = new Scanner(in);
                 int num = scanner.nextInt();
                 if (num >= 1) {
-                    System.out.println("\nSimulation will run for " + num + " months.");
+                    System.out.println("\nSimulation will run for " + num + " months.\n");
                     sparta.setMonths(num);
                     status = false;
                 } else {

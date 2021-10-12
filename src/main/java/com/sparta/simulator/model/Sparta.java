@@ -7,6 +7,7 @@ public class Sparta {
     private ArrayList<Integer> trainees = new ArrayList<>();
     private ArrayList<Integer> centres = new ArrayList<>();
     private int months;
+    private int currentMonth;
     private static Sparta spartaInstance = null;
 
     public static Sparta getInstance(){
@@ -38,5 +39,13 @@ public class Sparta {
 
     public void setMonths(int months) {
         this.months = months;
+    }
+
+    public int getCurrentMonth() {
+        return currentMonth;
+    }
+
+    public void setCurrentMonth(int currentMonth) {
+        this.currentMonth = currentMonth;
     }
 }
