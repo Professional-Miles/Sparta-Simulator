@@ -1,6 +1,23 @@
 package com.sparta.simulator.model;
 
-public class Trainee {
+import java.util.List;
+
+public class Trainee implements TraineeOperation{
+    @Override
+    public List<Trainee> getTrainees() {
+        return null;
+    }
+
+    @Override
+    public void setTrainess(List<Trainee> trainees) {
+
+    }
+
+    @Override
+    public void addTrainees(Trainee trainee, List<Trainee> trainees) {
+
+    }
+
     enum CourseType {
         JAVA, CSHARP, DEVOPS, BUSINESS
     }
