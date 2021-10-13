@@ -9,7 +9,7 @@ public class Trainee implements TraineeOperation{
     }
 
     @Override
-    public void setTrainess(List<Trainee> trainees) {
+    public void setTrainees(List<Trainee> trainees) {
 
     }
 
