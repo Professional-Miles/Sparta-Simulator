@@ -3,6 +3,16 @@ package com.sparta.simulator.model;
 import java.util.List;
 
 public class BootcampCentre extends Centre {
+    int capacity;
+
+    public BootcampCentre() {
+        capacity = 500;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
     @Override
     public int intGetCentreCapacity() {
         return 0;
