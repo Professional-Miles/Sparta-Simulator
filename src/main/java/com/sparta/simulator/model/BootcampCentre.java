@@ -2,11 +2,11 @@ package com.sparta.simulator.model;
 
 import java.util.List;
 
-public class TrainingCentre extends Centre{
-    private final int capacity;
+public class BootcampCentre extends Centre{
+    final int capacity;
 
-    public TrainingCentre() {
-        this.capacity = 100;
+    public BootcampCentre(){
+        this.capacity = 500;
     }
 
     public int getCapacity() {
