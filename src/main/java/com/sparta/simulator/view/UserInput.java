@@ -31,4 +31,15 @@ public class UserInput {
         }
         return num;
     }
+
+    public static void selectChoiceOfDataOutput(){
+        //ToDo fetch corresponding data and print
+        Scanner scanner = new Scanner(in);
+        System.out.println("1: Opened centre");
+        System.out.println("2: Closed centres");
+        System.out.println("3: Full centres");
+        System.out.println("4: Number of trainees in waiting list");
+        System.out.println("5: Number of trainees currently training");
+
+    }
 }
