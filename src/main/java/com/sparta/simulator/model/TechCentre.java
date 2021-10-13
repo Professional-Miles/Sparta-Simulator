@@ -6,7 +6,7 @@ public class TechCentre extends Centre {
     int capacity;
 
     public TechCentre() {
-        capacity = 200;
+        this.capacity = 200;
     }
 
     public int getCapacity() {

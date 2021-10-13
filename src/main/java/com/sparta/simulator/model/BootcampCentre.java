@@ -6,7 +6,7 @@ public class BootcampCentre extends Centre {
     int capacity;
 
     public BootcampCentre() {
-        capacity = 500;
+        this.capacity = 500;
     }
 
     public int getCapacity() {
