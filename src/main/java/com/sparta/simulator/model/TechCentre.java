@@ -5,6 +5,15 @@ import java.util.List;
 public class TechCentre extends Centre{
     private String centreType = "TechCentre";
     private int capacity;
+    private String courseType;
+
+    public String getCourseType() {
+        return courseType;
+    }
+
+    public void setCourseType(String courseType) {
+        this.courseType = courseType;
+    }
 
     public TechCentre(){
         this.capacity = 200;
