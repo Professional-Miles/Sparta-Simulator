@@ -21,6 +21,7 @@ public class RandomGenerator {
     }
 
     public static int getRandomNumOfTrainees() {
+        Random rand = new Random();
         int numOfTraineesToBeAddedEveryMonth = rand.nextInt(51);
         return numOfTraineesToBeAddedEveryMonth;
     }
