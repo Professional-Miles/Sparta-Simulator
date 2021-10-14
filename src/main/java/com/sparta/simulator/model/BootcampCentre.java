@@ -4,12 +4,13 @@ import java.util.List;
 
 public class BootcampCentre extends Centre{
 
-    private String centreType = "TrainingCentre";
+    private final String centreType = "Bootcamp";
     int capacity;
     int monthCount;
 
     public BootcampCentre(){
         this.capacity = 500;
+        this.monthCount = 3;
     }
 
     public String getCentreType() {
@@ -24,8 +25,8 @@ public class BootcampCentre extends Centre{
         return monthCount;
     }
 
-    public void setMonthCount(int monthCount) {
-        this.monthCount = monthCount;
+    public void decrementMonthCount() {
+        this.monthCount = monthCount-1;
     }
 
     @Override
