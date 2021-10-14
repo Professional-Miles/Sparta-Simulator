@@ -1,8 +1,10 @@
 package com.sparta.simulator.model;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Trainee implements TraineeOperation{
+    int count;
     enum CourseType {
         JAVA, CSHARP, DEVOPS, BUSINESS
     }
@@ -30,6 +32,10 @@ public class Trainee implements TraineeOperation{
         this.id = id;
     }
 
+    public void incrementTrainee(){
+        this.count ++;
+    }
+
     @Override
     public List<Trainee> getTrainees() {
         return null;
@@ -43,5 +49,18 @@ public class Trainee implements TraineeOperation{
     @Override
     public void addTrainees(Trainee trainee, List<Trainee> trainees) {
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Trainee trainee = (Trainee) o;
+        return courseType == trainee.courseType;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(courseType);
     }
 }

@@ -3,7 +3,12 @@ package com.sparta.simulator.model;
 import java.util.List;
 
 public class TrainingCentre extends Centre{
-    private final int capacity;
+    private String centreType = "TrainingCentre";
+    private int capacity;
+
+    public String getCentreType() {
+        return centreType;
+    }
 
     public TrainingCentre() {
         this.capacity = 100;
