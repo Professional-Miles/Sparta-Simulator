@@ -1,6 +1,5 @@
 package com.sparta.simulator.controller;
 
-import com.sparta.simulator.model.RandomGenerator;
 import com.sparta.simulator.model.Sparta;
 import java.util.List;
 

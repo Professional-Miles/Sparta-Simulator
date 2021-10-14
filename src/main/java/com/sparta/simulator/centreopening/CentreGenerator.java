@@ -1,5 +1,6 @@
 package com.sparta.simulator.centreopening;
 
+import com.sparta.simulator.controller.RandomGenerator;
 import com.sparta.simulator.model.*;
 
 import java.util.Random;
