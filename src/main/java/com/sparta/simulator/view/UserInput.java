@@ -11,16 +11,17 @@ public class UserInput {
 
     private static final Logger log = Logger.getLogger("User input logger.");
 
-    public static void getMonths(){
+    public static int getNumOfMonths(){
 
         Sparta sparta = Sparta.getInstance();
+        int num = 0;
 
         boolean status = true;
         while (status) {
             System.out.print(DisplayManager.getDisplaySimTime());
             try{
                 Scanner scanner = new Scanner(in);
-                int num = scanner.nextInt();
+                num = scanner.nextInt();
                 if (num >= 1) {
                     System.out.println("\nSimulation will run for " + num + " months.\n");
                     sparta.setMonths(num);
@@ -33,6 +34,6 @@ public class UserInput {
                 log.log(Level.ERROR, "\n[" + e.getClass().getName() + " thrown.]\n");
             }
         }
+        return num;
     }
-
 }

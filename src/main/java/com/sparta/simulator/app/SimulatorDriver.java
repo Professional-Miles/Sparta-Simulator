@@ -14,7 +14,7 @@ public class SimulatorDriver {
     public static void main(String[] args) {
         Sparta sparta = Sparta.getInstance();
         PropertyConfigurator.configure("log4j.properties");
-        UserInput.getMonths();
+        UserInput.getNumOfMonths();
         sparta.setCurrentMonth(0);
         while (sparta.getCurrentMonth() < Sparta.getInstance().getMonths()) {
             ListManager.monthlyActions();
@@ -23,5 +23,3 @@ public class SimulatorDriver {
 
     }
 }
-
-

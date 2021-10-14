@@ -18,23 +18,13 @@ public class MoveTrainee {
         if(sparta.getTrainees().get(0) > 50){
             rTrainees = (ThreadLocalRandom.current().nextInt(0, 51));
         } else {
-
-
             rTrainees = (ThreadLocalRandom.current().nextInt(0, sparta.getTrainees().get(0)+1));
         }
-
 
         sparta.getTrainees().set(0, sparta.getTrainees().get(0) - rTrainees);
 
         if (rTrainees > c.get(0))
             //check to see whether the index is 0
         c.set(0,c.get(0) - rTrainees);
-
-
-
-
     }
-
-
-
 }
