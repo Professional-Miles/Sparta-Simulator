@@ -66,8 +66,8 @@ public class Sparta {
 
     private static Sparta spartaInstance = null;
 
-    public static Sparta getInstance(){
-        if(spartaInstance == null){
+    public static Sparta getInstance() {
+        if (spartaInstance == null) {
             spartaInstance = new Sparta();
         }
         return spartaInstance;
@@ -83,7 +83,7 @@ public class Sparta {
         this.bootCampCount = bootCampCount - 1;
     }
 
-    public boolean tooManyBoots(){
+    public boolean tooManyBoots() {
         return bootCampCount == 2;
     }
 
@@ -131,7 +131,7 @@ public class Sparta {
         return idCounter;
     }
 
-    public void incrementIdCounter(){
+    public void incrementIdCounter() {
         this.idCounter += 1;
     }
 
@@ -141,11 +141,11 @@ public class Sparta {
         return openCentres;
     }
 
-    public void incrementOpenCentres(){
+    public void incrementOpenCentres() {
         this.openCentres++;
     }
 
-    public void decrementOpenCentres(){
+    public void decrementOpenCentres() {
         this.openCentres--;
     }
 
@@ -155,11 +155,11 @@ public class Sparta {
         return closedCentres;
     }
 
-    public void incrementClosedCentres(){
+    public void incrementClosedCentres() {
         this.closedCentres++;
     }
 
-    public void decrementClosedCentres(){
+    public void decrementClosedCentres() {
         this.closedCentres--;
     }
 
@@ -169,11 +169,11 @@ public class Sparta {
         return fullCentres;
     }
 
-    public void incrementFullCentres(){
+    public void incrementFullCentres() {
         this.fullCentres++;
     }
 
-    public void decrementFullCentres(){
+    public void decrementFullCentres() {
         this.fullCentres--;
     }
 
@@ -367,7 +367,7 @@ public class Sparta {
     }
 
     public void incrementDevopsTechCentres() {
-         this.devopsTechCentres++;
+        this.devopsTechCentres++;
     }
 
     public void decrementDevopsTechCentres() {

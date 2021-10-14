@@ -21,10 +21,11 @@ public class Centre implements CentreOperations {
         return centreFull;
     }
 
-    public String getCentreType(){
+    public String getCentreType() {
         return centreType;
     }
-    public boolean isFull(){
+
+    public boolean isFull() {
         return this.capacity == 0;
     }
 
@@ -36,11 +37,11 @@ public class Centre implements CentreOperations {
 
     @Override
     public void decrementCapacity() {
-        capacity = capacity -1;
+        capacity = capacity - 1;
     }
 
     @Override
     public void incrementCapacity() {
-        capacity = capacity +1;
+        capacity = capacity + 1;
     }
 }

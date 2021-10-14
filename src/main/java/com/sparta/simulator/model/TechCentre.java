@@ -9,7 +9,7 @@ public class TechCentre extends Centre {
     private String courseType;
     final String[] courseTypes = {"java", "cSharp", "data", "devops", "business"};
 
-    public TechCentre(){
+    public TechCentre() {
         this.capacity = 200;
         this.centreFull = false;
         this.centreType = "TechCentre";

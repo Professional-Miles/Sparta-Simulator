@@ -1,7 +1,6 @@
 package com.sparta.simulator.model;
 
 
-
 public class Trainee implements TraineeOperations {
 
     private int id;
@@ -12,7 +11,7 @@ public class Trainee implements TraineeOperations {
     private boolean isBenched;
     private boolean isWorking;
 
-    public Trainee(int id, String courseType){
+    public Trainee(int id, String courseType) {
         this.id = id;
         this.courseType = courseType;
         this.trainingTime = 1;
@@ -79,7 +78,7 @@ public class Trainee implements TraineeOperations {
 
     @Override
     public void incrementTrainingTime() {
-        trainingTime = trainingTime +1;
+        trainingTime = trainingTime + 1;
     }
 
     @Override
