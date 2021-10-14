@@ -3,6 +3,7 @@ package com.sparta.simulator.model;
 import java.util.List;
 
 public class Trainee implements TraineeOperation{
+    int count;
     enum CourseType {
         JAVA, CSHARP, DEVOPS, BUSINESS
     }
@@ -28,6 +29,10 @@ public class Trainee implements TraineeOperation{
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void incrementTrainee(){
+        this.count ++;
     }
 
     @Override
