@@ -111,6 +111,10 @@ public class Sparta {
 
     /* / */
 
+    public void setMonths(int months) {
+        this.months = months;
+    }
+
     public int getMonths() {
         return months;
     }
@@ -121,6 +125,10 @@ public class Sparta {
 
     public void incrementCurrentMonth() {
         this.currentMonth++;
+    }
+
+    public int getIdCounter() {
+        return idCounter;
     }
 
     public void incrementIdCounter(){

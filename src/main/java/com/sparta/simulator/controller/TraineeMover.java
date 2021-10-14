@@ -1,9 +1,7 @@
 package com.sparta.simulator.controller;
 
-import com.sparta.simulator.model.Centre;
 import com.sparta.simulator.model.RandomGenerator;
 import com.sparta.simulator.model.Sparta;
-import com.sparta.simulator.model.Trainee;
 import java.util.List;
 
 public class TraineeMover {
