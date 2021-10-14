@@ -7,4 +7,6 @@ public interface CentreOperations {
     String getCentreType();
     public boolean isFull();
     public boolean lowCapacity();
+    void decrementCapacity();
+    void incrementCapacity();
 }

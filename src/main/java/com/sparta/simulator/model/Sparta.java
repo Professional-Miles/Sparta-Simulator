@@ -5,47 +5,64 @@ import java.util.List;
 
 public class Sparta {
 
-    // private List<Trainee> trainees = new ArrayList<>();
-    private List<Trainee> waitingList= new ArrayList<>();
+    private int bootCampCount = 0;
+
+    /* / */
+
+    private List<Trainee> waitingList = new ArrayList<>();
+    private List<Trainee> trainingList = new ArrayList<>();
     private List<Trainee> bench = new ArrayList<>();
     private List<Centre> centres = new ArrayList<>();
 
+    /* / */
 
     private int months;
     private int currentMonth = 1;
 
     private int idCounter = 1;
 
-    private int openCentres;
-    private int closedCentres;
-    private int fullCentres;
+    /* / */
 
-    private int trainingTrainees;
-    private int waitingTrainees;
+    private int openCentres = 0;
+    private int closedCentres = 0;
+    private int fullCentres = 0;
 
-    private int cSharpTrainees;
-    private int javaTrainees;
-    private int dataTrainees;
-    private int devopsTrainees;
-    private int businessTrainees;
+    /* / */
 
-    private int trainingHubs;
-    private int bootCamps;
-    private int techCentres;
+    private int trainingTrainees = 0;
+    private int waitingTrainees = 0;
 
-    private int cSharpTechCentres;
-    private int javaTechCentres;
-    private int dataTechCentres;
-    private int devopsTechCentres;
-    private int businessTechCentres;
+    /* / */
 
-    private int clients;
-    private int traineesWithClients;
-    private int traineesOnBench;
-    private int unhappyClients;
-    private int happyClients;
+    private int cSharpTrainees = 0;
+    private int javaTrainees = 0;
+    private int dataTrainees = 0;
+    private int devopsTrainees = 0;
+    private int businessTrainees = 0;
 
-    private int bootCampCount = 0;
+    /* / */
+
+    private int trainingHubs = 0;
+    private int bootCamps = 0;
+    private int techCentres = 0;
+
+    /* / */
+
+    private int cSharpTechCentres = 0;
+    private int javaTechCentres = 0;
+    private int dataTechCentres = 0;
+    private int devopsTechCentres = 0;
+    private int businessTechCentres = 0;
+
+    /* / */
+
+    private int clients = 0;
+    private int traineesWithClients = 0;
+    private int traineesOnBench = 0;
+    private int unhappyClients = 0;
+    private int happyClients = 0;
+
+    /* / */
 
     private static Sparta spartaInstance = null;
 
@@ -56,251 +73,340 @@ public class Sparta {
         return spartaInstance;
     }
 
-    public int getBootCampCount() {
-        return bootCampCount;
-    }
+    /* / */
 
     public void incrementBootCampCount() {
-        this.bootCampCount = bootCampCount+1;
+        this.bootCampCount++;
     }
 
     public void decrementBootCampCount() {
-        this.bootCampCount = bootCampCount-1;
+        this.bootCampCount = bootCampCount - 1;
     }
 
     public boolean tooManyBoots(){
         return bootCampCount == 2;
     }
 
-    public int getIdCounter() {
-        return idCounter;
+    public int getBootCampCount() {
+        return bootCampCount;
     }
 
-    public void setIdCounter(int idCounter){
-        this.idCounter = idCounter;
-    }
-
-    public void setCSharpTrainees(int cSharpTrainees) {
-        this.cSharpTrainees = cSharpTrainees;
-    }
+    /* / */
 
     public List<Trainee> getWaitingList() {
         return waitingList;
     }
 
-    public void setWaitingList(List<Trainee> waitingList) {
-        this.waitingList = waitingList;
+    public List<Trainee> getTrainingList() {
+        return trainingList;
     }
 
     public List<Trainee> getBench() {
         return bench;
     }
 
-    public void setBench(List<Trainee> bench) {
-        this.bench = bench;
-    }
-
     public List<Centre> getCentres() {
         return centres;
     }
 
-    public void setCentres(List<Centre> centres) {
-        this.centres = centres;
-    }
+    /* / */
 
     public int getMonths() {
         return months;
-    }
-
-    public void setMonths(int months) {
-        this.months = months;
     }
 
     public int getCurrentMonth() {
         return currentMonth;
     }
 
-    public void setCurrentMonth() {
-        this.currentMonth = currentMonth+1;
+    public void incrementCurrentMonth() {
+        this.currentMonth++;
     }
+
+    public void incrementIdCounter(){
+        this.idCounter += 1;
+    }
+
+    /* / */
 
     public int getOpenCentres() {
         return openCentres;
     }
 
-    public void setOpenCentres(int openCentres) {
-        this.openCentres = openCentres;
+    public void incrementOpenCentres(){
+        this.openCentres++;
     }
+
+    public void decrementOpenCentres(){
+        this.openCentres--;
+    }
+
+    /* / */
 
     public int getClosedCentres() {
         return closedCentres;
     }
 
-    public void setClosedCentres(int closedCentres) {
-        this.closedCentres = closedCentres;
+    public void incrementClosedCentres(){
+        this.closedCentres++;
     }
+
+    public void decrementClosedCentres(){
+        this.closedCentres--;
+    }
+
+    /* / */
 
     public int getFullCentres() {
         return fullCentres;
     }
 
-    public void setFullCentres(int fullCentres) {
-        this.fullCentres = fullCentres;
+    public void incrementFullCentres(){
+        this.fullCentres++;
     }
+
+    public void decrementFullCentres(){
+        this.fullCentres--;
+    }
+
+    /* / */
 
     public int getTrainingTrainees() {
         return trainingTrainees;
     }
 
-    public void setTrainingTrainees(int trainingTrainees) {
-        this.trainingTrainees = trainingTrainees;
+    public void incrementTrainingTrainees() {
+        this.trainingTrainees++;
     }
+
+    public void decrementTrainingTrainees() {
+        this.trainingTrainees--;
+    }
+
+    /* / */
 
     public int getWaitingTrainees() {
         return waitingTrainees;
     }
 
-    public void setWaitingTrainees(int waitingTrainees) {
-        this.waitingTrainees = waitingTrainees;
+    public void incrementWaitingTrainees() {
+        this.waitingTrainees++;
     }
+
+    public void decrementWaitingTrainees() {
+        this.waitingTrainees--;
+    }
+
+    /* / */
 
     public int getCSharpTrainees() {
         return cSharpTrainees;
     }
 
+    public void incrementCSharpTrainees() {
+        this.cSharpTrainees++;
+    }
+
+    public void decrementCSharpTrainees() {
+        this.cSharpTrainees--;
+    }
+
+
+    /* / */
+
     public int getJavaTrainees() {
         return javaTrainees;
     }
 
-    public void setJavaTrainees(int javaTrainees) {
-        this.javaTrainees = javaTrainees;
+    public void incrementJavaTrainees() {
+        this.javaTrainees++;
     }
+
+    public void decrementJavaTrainees() {
+        this.javaTrainees--;
+    }
+
+    /* / */
 
     public int getDataTrainees() {
         return dataTrainees;
     }
 
-    public void setDataTrainees(int dataTrainees) {
-        this.dataTrainees = dataTrainees;
+    public void incrementDataTrainees() {
+        this.dataTrainees++;
     }
+
+    public void decrementDataTrainees() {
+        this.dataTrainees--;
+    }
+
+    /* / */
 
     public int getDevopsTrainees() {
         return devopsTrainees;
     }
 
-    public void setDevopsTrainees(int devopsTrainees) {
-        this.devopsTrainees = devopsTrainees;
+    public void incrementDevopsTrainees() {
+        this.devopsTrainees++;
     }
+
+    public void decrementDevopsTrainees() {
+        this.devopsTrainees--;
+    }
+
+    /* / */
 
     public int getBusinessTrainees() {
         return businessTrainees;
     }
 
-    public void setBusinessTrainees(int businessTrainees) {
-        this.businessTrainees = businessTrainees;
+    public void incrementBusinessTrainees() {
+        this.businessTrainees++;
     }
+
+    public void decrementBusinessTrainees() {
+        this.businessTrainees--;
+    }
+
+    /* / */
 
     public int getTrainingHubs() {
         return trainingHubs;
     }
 
-    public void setTrainingHubs(int trainingHubs) {
-        this.trainingHubs = trainingHubs;
+    public void incrementTrainingHubs() {
+        this.trainingHubs++;
     }
+
+    public void decrementTrainingHubs() {
+        this.trainingHubs--;
+    }
+
+    /* / */
 
     public int getBootCamps() {
         return bootCamps;
     }
 
-    public void setBootCamps(int bootCamps) {
-        this.bootCamps = bootCamps;
+    public void incrementBootCamps() {
+        this.bootCamps++;
     }
+
+    public void decrementBootCamps() {
+        this.bootCamps--;
+    }
+
+    /* / */
 
     public int getTechCentres() {
         return techCentres;
     }
 
-    public void setTechCentres(int techCentres) {
-        this.techCentres = techCentres;
+    public void incrementTechCentres() {
+        this.techCentres++;
     }
+
+    public void decrementTechCentres() {
+        this.techCentres--;
+    }
+
+    /* / */
 
     public int getCSharpTechCentres() {
         return cSharpTechCentres;
     }
 
-    public void setCSharpTechCentres(int cSharpTechCentres) {
-        this.cSharpTechCentres = cSharpTechCentres;
+    public void incrementCSharpTechCentres() {
+        this.cSharpTechCentres++;
     }
+
+    public void decrementCSharpTechCentres() {
+        this.cSharpTechCentres--;
+    }
+
+    /* / */
 
     public int getJavaTechCentres() {
         return javaTechCentres;
     }
 
-    public void setJavaTechCentres(int javaTechCentres) {
-        this.javaTechCentres = javaTechCentres;
+    public void incrementJavaTechCentres() {
+        this.javaTechCentres++;
     }
+
+    public void decrementJavaTechCentres() {
+        this.javaTechCentres--;
+    }
+
+    /* / */
 
     public int getDataTechCentres() {
         return dataTechCentres;
     }
 
-    public void setDataTechCentres(int dataTechCentres) {
-        this.dataTechCentres = dataTechCentres;
+    public void incrementDataTechCentres() {
+        this.dataTechCentres++;
     }
+
+    public void decrementDataTechCentres() {
+        this.dataTechCentres--;
+    }
+
+    /* / */
 
     public int getDevopsTechCentres() {
         return devopsTechCentres;
     }
 
-    public void setDevopsTechCentres(int devopsTechCentres) {
-        this.devopsTechCentres = devopsTechCentres;
+    public void incrementDevopsTechCentres() {
+         this.devopsTechCentres++;
     }
+
+    public void decrementDevopsTechCentres() {
+        this.devopsTechCentres--;
+    }
+
+    /* / */
 
     public int getBusinessTechCentres() {
         return businessTechCentres;
     }
 
-    public void setBusinessTechCentres(int businessTechCentres) {
-        this.businessTechCentres = businessTechCentres;
+    public void incrementBusinessTechCentres() {
+        this.businessTechCentres++;
     }
+
+    public void decrementBusinessTechCentres() {
+        this.businessTechCentres--;
+    }
+
+    /* / */
 
     public int getClients() {
         return clients;
     }
 
-    public void setClients(int clients) {
-        this.clients = clients;
-    }
+    /* / */
 
     public int getTraineesWithClients() {
         return traineesWithClients;
     }
 
-    public void setTraineesWithClients(int traineesWithClients) {
-        this.traineesWithClients = traineesWithClients;
-    }
+    /* / */
 
     public int getTraineesOnBench() {
         return traineesOnBench;
     }
 
-    public void setTraineesOnBench(int traineesOnBench) {
-        this.traineesOnBench = traineesOnBench;
-    }
+    /* / */
 
     public int getUnhappyClients() {
         return unhappyClients;
     }
 
-    public void setUnhappyClients(int unhappyClients) {
-        this.unhappyClients = unhappyClients;
-    }
+    /* / */
 
     public int getHappyClients() {
         return happyClients;
-    }
-
-    public void setHappyClients(int happyClients) {
-        this.happyClients = happyClients;
     }
 }

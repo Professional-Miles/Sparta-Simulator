@@ -33,4 +33,14 @@ public class Centre implements CentreOperations {
         return this.capacity < 25;
 
     }
+
+    @Override
+    public void decrementCapacity() {
+        capacity = capacity -1;
+    }
+
+    @Override
+    public void incrementCapacity() {
+        capacity = capacity +1;
+    }
 }

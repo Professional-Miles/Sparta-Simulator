@@ -1,38 +1,40 @@
 package com.sparta.simulator.controller;
 
 import com.sparta.simulator.model.Centre;
+import com.sparta.simulator.model.RandomGenerator;
+import com.sparta.simulator.model.Sparta;
 import com.sparta.simulator.model.Trainee;
-
 import java.util.List;
 
 public class TraineeMover {
 
-    public static void moveTrainee(int r, List<Trainee> t, List<Centre> c) {
+    public static void moveTrainee() {
 
+        Sparta sparta = Sparta.getInstance();
+        int r = RandomGenerator.getRandomNumOfTrainees();
 
         while (r > 0){
 
-            if (CentreAvailability.spaceAvailable(c)){
+            if (CentreAvailability.spaceAvailable(sparta.getCentres())){
 
-                String rc = "Training Hub"; //will be random
+                String rc = RandomGenerator.generateRandomCentreThree();
 
-                if (CentreAvailability.chosenCentreExist(rc,c) >= 0) {
+                if (CentreAvailability.chosenCentreExist(rc,sparta.getCentres(),0) >= 0) {
 
-                    if (RC equals techcentre){
-                        if (RC course type equals Trainee at index 0 course type){
-                            centre in List C at index CI decrement capcity.
-                                    remove trainee from List T at index 0.
+                    if (rc.equals("TechCentre")){
+                        int tCIndex = CentreAvailability.techCentreType(sparta.getWaitingList().get(0).getCourseType(),sparta.getCentres())
+                        if (tCIndex >= 0){
+                           sparta.getCentres().get(tCIndex).decrementCapacity();
+                           sparta.getTrainingList().add(sparta.getWaitingList().get(0));
+                           sparta.getWaitingList().remove(0);
+
                         } else {
-
-                            send trainee to a different centre with space ///done later
-
+                          //  send trainee to a different centre with space
                         }
-
                     } else {
                         centre in List C at index CI decrement capcity.
                                 remove trainee from List T at index 0.
                     }
-
 
                 } else {
 
@@ -44,7 +46,7 @@ public class TraineeMover {
             } else {
                 all centres full
             }
-            R--;
+            r--;
         }
     }
 
