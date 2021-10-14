@@ -12,9 +12,9 @@ public class RandomGenerator {
         if (x == 1)  {
             centre = new TechCentre();
         } else if (x == 2) {
-            centre = new TrainingCentre();
+            centre = new TrainingHub();
         } else if (x == 3) {
-            centre = new BootcampCentre();
+            centre = new BootCamp();
         }
 
         return null;

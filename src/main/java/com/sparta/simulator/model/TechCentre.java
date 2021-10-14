@@ -1,69 +1,24 @@
 package com.sparta.simulator.model;
 
-import java.util.List;
+import java.util.Random;
 
-public class TechCentre extends Centre{
-    private String centreType = "TechCentre";
+public class TechCentre extends Centre {
+    private String centreType;
     private int capacity;
+    private boolean centreFull;
     private String courseType;
+    final String[] courseTypes = {"java", "cSharp", "data", "devops", "business"};
+
+    public TechCentre(){
+        this.capacity = 200;
+        this.centreFull = false;
+        this.centreType = "TechCentre";
+        Random random = new Random();
+        this.courseType = courseTypes[random.nextInt(courseTypes.length)];
+    }
 
     public String getCourseType() {
         return courseType;
     }
 
-    public void setCourseType(String courseType) {
-        this.courseType = courseType;
-    }
-
-    public TechCentre(){
-        this.capacity = 200;
-    }
-
-    public String getCentreType() {
-        return centreType;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    @Override
-    public int intGetCentreCapacity() {
-        return 0;
-    }
-
-    @Override
-    public void setCentreFull(boolean centreFull) {
-
-    }
-
-    @Override
-    public void addCentreCount(int centreCount) {
-
-    }
-
-    @Override
-    public int getCentreCount() {
-        return 0;
-    }
-
-    @Override
-    public boolean isCentreCountFull() {
-        return false;
-    }
-
-    @Override
-    public List<Trainee> getTrainees() {
-        return null;
-    }
-
-    @Override
-    public void setTrainees(List<Trainee> trainees) {
-
-    }
-
-    @Override
-    public void addTrainees(Trainee trainee, List<Trainee> trainees) {
-
-    }
 }

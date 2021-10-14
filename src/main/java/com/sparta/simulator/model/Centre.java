@@ -1,11 +1,36 @@
 package com.sparta.simulator.model;
 
-public abstract class Centre implements CentreOperations, TraineeOperation {
+public class Centre implements CentreOperations {
 
-    public boolean isFull() {
-        return false;
+    private String centreType;
+    private boolean centreFull;
+    private int capacity;
+
+    @Override
+    public int getCapacity() {
+        return capacity;
     }
-    public boolean lowCapacity(int numOfTrainees) {
-        return false;
+
+    @Override
+    public void setCentreFull() {
+        centreFull = true;
+    }
+
+    @Override
+    public boolean getCentreFull() {
+        return centreFull;
+    }
+
+    public String getCentreType(){
+        return centreType;
+    }
+    public boolean isFull(){
+        return this.capacity == 0;
+    }
+
+    @Override
+    public boolean lowCapacity() {
+        return this.capacity < 25;
+
     }
 }
