@@ -3,8 +3,10 @@ package com.sparta.simulator.model;
 import java.util.List;
 
 public class BootcampCentre extends Centre{
+
     private String centreType = "TrainingCentre";
     int capacity;
+    int monthCount;
 
     public BootcampCentre(){
         this.capacity = 500;
@@ -16,6 +18,14 @@ public class BootcampCentre extends Centre{
 
     public int getCapacity() {
         return capacity;
+    }
+
+    public int getMonthCount() {
+        return monthCount;
+    }
+
+    public void setMonthCount(int monthCount) {
+        this.monthCount = monthCount;
     }
 
     @Override
