@@ -1,6 +1,7 @@
 package com.sparta.simulator.model;
 
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Trainee implements TraineeOperation{
     enum CourseType {
@@ -30,8 +31,10 @@ public class Trainee implements TraineeOperation{
         this.id = id;
     }
 
+
     @Override
     public List<Trainee> getTrainees() {
+
         return null;
     }
 
