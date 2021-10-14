@@ -20,7 +20,7 @@ public class RandomGenerator {
         return null;
     }
 
-    public int getRandomNumOfTrainees() {
+    public static int getRandomNumOfTrainees() {
         int numOfTraineesToBeAddedEveryMonth = rand.nextInt(51);
         return numOfTraineesToBeAddedEveryMonth;
     }
