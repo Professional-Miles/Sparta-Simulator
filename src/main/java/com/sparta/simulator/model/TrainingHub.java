@@ -10,7 +10,7 @@ public class TrainingHub extends Centre {
     public TrainingHub() {
         this.capacity = 100;
         this.centreFull = false;
-        this.centreType = "TrainingCentre";
+        this.centreType = "TrainingHub";
     }
 
 }

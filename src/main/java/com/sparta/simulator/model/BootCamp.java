@@ -12,7 +12,7 @@ public class BootCamp extends Centre {
         this.capacity = 500;
         this.monthCount = 3;
         this.centreFull = false;
-        this.centreType = "Bootcamp";
+        this.centreType = "BootCamp";
     }
 
     public int getMonthCount() {

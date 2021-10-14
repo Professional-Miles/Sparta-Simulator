@@ -3,21 +3,17 @@ package com.sparta.simulator.model;
 import java.util.Random;
 
 public class RandomGenerator {
-    Random rand = new Random();
-    Centre centre;
 
-    public Centre generateRandomCentre() {
+    public static String generateRandomCentreTwo() {
+        final String[] centreTypes = {"TechCentre","TrainingHub"};
+        Random random = new Random();
+        return centreTypes[random.nextInt(centreTypes.length)];
+    }
 
-        int x = rand.nextInt(4);
-        if (x == 1)  {
-            centre = new TechCentre();
-        } else if (x == 2) {
-            centre = new TrainingHub();
-        } else if (x == 3) {
-            centre = new BootCamp();
-        }
-
-        return null;
+    public static String generateRandomCentreThree() {
+        final String[] centreTypes = {"TechCentre","TrainingHub","BootCamp"};
+        Random random = new Random();
+        return centreTypes[random.nextInt(centreTypes.length)];
     }
 
     public static int getRandomNumOfTrainees() {

@@ -12,7 +12,7 @@ public class Sparta {
 
 
     private int months;
-    private int currentMonth;
+    private int currentMonth = 1;
 
     private int idCounter = 1;
 
@@ -45,6 +45,7 @@ public class Sparta {
     private int unhappyClients;
     private int happyClients;
 
+    private int bootCampCount = 0;
 
     private static Sparta spartaInstance = null;
 
@@ -55,6 +56,22 @@ public class Sparta {
         return spartaInstance;
     }
 
+    public int getBootCampCount() {
+        return bootCampCount;
+    }
+
+    public void incrementBootCampCount() {
+        this.bootCampCount = bootCampCount+1;
+    }
+
+    public void decrementBootCampCount() {
+        this.bootCampCount = bootCampCount-1;
+    }
+
+    public boolean tooManyBoots(){
+        return bootCampCount == 2;
+    }
+
     public int getIdCounter() {
         return idCounter;
     }
@@ -63,7 +80,7 @@ public class Sparta {
         this.idCounter = idCounter;
     }
 
-    public void setcSharpTrainees(int cSharpTrainees) {
+    public void setCSharpTrainees(int cSharpTrainees) {
         this.cSharpTrainees = cSharpTrainees;
     }
 
@@ -103,8 +120,8 @@ public class Sparta {
         return currentMonth;
     }
 
-    public void setCurrentMonth(int currentMonth) {
-        this.currentMonth = currentMonth;
+    public void setCurrentMonth() {
+        this.currentMonth = currentMonth+1;
     }
 
     public int getOpenCentres() {
@@ -149,10 +166,6 @@ public class Sparta {
 
     public int getCSharpTrainees() {
         return cSharpTrainees;
-    }
-
-    public void setCSharpTrainees(int cSharpTrainees) {
-        this.cSharpTrainees = cSharpTrainees;
     }
 
     public int getJavaTrainees() {
