@@ -4,6 +4,7 @@ import com.sparta.simulator.model.Sparta;
 
 public class CentreAttendanceLow {
 
+    //  working on
     public static void lowAttendanceCheck() {
         Sparta sparta = Sparta.getInstance();
 
@@ -29,11 +30,10 @@ public class CentreAttendanceLow {
                                 break;
                         }
                         sparta.getCentres().remove(i);
-                        j++;
                     } else {
                         i++;
-                        j++;
                     }
+                    j++;
                 }
             }
         }
