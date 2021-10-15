@@ -1,35 +1,26 @@
 package com.sparta.simulator.model;
 
-import java.util.Random;
+public class TrainingHub extends Centre {
 
-public class TechCentre extends Centre {
     private String centreType;
     private int capacity;
     private boolean centreFull;
-    private String courseType;
-    final String[] courseTypes = {"java", "cSharp", "data", "devops", "business"};
-    private final int maxCapacity = 200;
+    private final int maxCapacity = 100;
     private int openTime;
 
-    public TechCentre() {
-        this.capacity = 200;
+    public TrainingHub() {
+        this.capacity = 100;
         this.centreFull = false;
-        this.centreType = "TechCentre";
-        Random random = new Random();
-        this.courseType = courseTypes[random.nextInt(courseTypes.length)];
+        this.centreType = "TrainingHub";
         this.openTime = 0;
-    }
-
-    public String getCourseType() {
-        return courseType;
     }
 
     @Override
     public String toString() {
         return "[ Centre type = " + centreType + '\'' +
-                ", Capacity = " + capacity +
-                ", Course type = " + courseType + " ]";
+                        ", Capacity = " + capacity + " ]";
     }
+
     @Override
     public int getCapacity() {
         return capacity;
@@ -56,7 +47,6 @@ public class TechCentre extends Centre {
     @Override
     public boolean lowAttendance() {
         return maxCapacity - 25 < this.capacity;
-
     }
 
     @Override
