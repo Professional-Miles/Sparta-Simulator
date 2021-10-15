@@ -25,7 +25,7 @@ public class RandomGeneratorTest {
 
     @Test
     public void generateRandomCentreTwo_ReturnsACorrectCentreString() {
-        String generatedRandomCentre = RandomGenerator.generateRandomCentreThree();
+        String generatedRandomCentre = RandomGenerator.generateRandomCentreTwo();
         String matchedString = "";
 
         if ("TechCentre".equals(generatedRandomCentre) || "TrainingHub".equals(generatedRandomCentre)) {
