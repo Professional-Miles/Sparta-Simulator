@@ -5,11 +5,14 @@ public class TrainingHub extends Centre {
     private String centreType;
     private int capacity;
     private boolean centreFull;
+    private final int maxCapacity = 100;
+    private int openTime;
 
     public TrainingHub() {
         this.capacity = 100;
         this.centreFull = false;
         this.centreType = "TrainingHub";
+        this.openTime = 0;
     }
 
     @Override
@@ -42,9 +45,8 @@ public class TrainingHub extends Centre {
     }
 
     @Override
-    public boolean lowCapacity() {
-        return this.capacity < 25;
-
+    public boolean lowAttendance() {
+        return maxCapacity - 25 < this.capacity;
     }
 
     @Override
@@ -55,5 +57,15 @@ public class TrainingHub extends Centre {
     @Override
     public void incrementCapacity() {
         capacity = capacity + 1;
+    }
+
+    @Override
+    public int getOpenTime() {
+        return this.openTime;
+    }
+
+    @Override
+    public void incrementOpenTime() {
+        this.openTime++;
     }
 }

@@ -1,6 +1,8 @@
 package com.sparta.simulator.app;
 
 import com.sparta.simulator.centreopening.CentreGenerator;
+import com.sparta.simulator.controller.CentreAttendanceLow;
+import com.sparta.simulator.controller.IncrementOpenTime;
 import com.sparta.simulator.controller.TraineeMover;
 import com.sparta.simulator.maketrainee.TraineeGenerator;
 import com.sparta.simulator.model.Sparta;
@@ -30,8 +32,12 @@ public class SimulatorDriver {
             System.out.println("Camps = " + sparta.getBootCamps());
             System.out.println("Waiting Trainees = " + sparta.getWaitingTrainees());
             TraineeMover.moveTrainee();
+            CentreAttendanceLow.lowAttendanceCheck();
             System.out.println("After moving = "+sparta.getCentres());
             System.out.println("Training Trainees = "+ sparta.getTrainingTrainees());
+            System.out.println("Open centres = " + sparta.getOpenCentres());
+            System.out.println("Closed Centres = " + sparta.getClosedCentres());
+            IncrementOpenTime.hasBeenOpen();
             sparta.incrementCurrentMonth();
 
         }

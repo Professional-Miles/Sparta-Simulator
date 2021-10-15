@@ -7,12 +7,15 @@ public class BootCamp extends Centre {
     int capacity;
     int monthCount;
     private boolean centreFull;
+    private final int maxCapacity = 500;
+    private int openTime;
 
     public BootCamp() {
         this.capacity = 500;
         this.monthCount = 3;
         this.centreFull = false;
         this.centreType = "BootCamp";
+        this.openTime = 0;
     }
 
     public int getMonthCount() {
@@ -53,9 +56,8 @@ public class BootCamp extends Centre {
     }
 
     @Override
-    public boolean lowCapacity() {
-        return this.capacity < 25;
-
+    public boolean lowAttendance() {
+        return maxCapacity - 25 < this.capacity;
     }
 
     @Override
@@ -66,5 +68,15 @@ public class BootCamp extends Centre {
     @Override
     public void incrementCapacity() {
         capacity = capacity + 1;
+    }
+
+    @Override
+    public int getOpenTime() {
+        return this.openTime;
+    }
+
+    @Override
+    public void incrementOpenTime() {
+        this.openTime++;
     }
 }

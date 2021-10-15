@@ -1,6 +1,5 @@
 package com.sparta.simulator.model;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class TechCentre extends Centre {
@@ -9,6 +8,8 @@ public class TechCentre extends Centre {
     private boolean centreFull;
     private String courseType;
     final String[] courseTypes = {"java", "cSharp", "data", "devops", "business"};
+    private final int maxCapacity = 200;
+    private int openTime;
 
     public TechCentre() {
         this.capacity = 200;
@@ -16,6 +17,7 @@ public class TechCentre extends Centre {
         this.centreType = "TechCentre";
         Random random = new Random();
         this.courseType = courseTypes[random.nextInt(courseTypes.length)];
+        this.openTime = 0;
     }
 
     public String getCourseType() {
@@ -52,8 +54,8 @@ public class TechCentre extends Centre {
     }
 
     @Override
-    public boolean lowCapacity() {
-        return this.capacity < 25;
+    public boolean lowAttendance() {
+        return maxCapacity - 25 < this.capacity;
 
     }
 
@@ -65,5 +67,15 @@ public class TechCentre extends Centre {
     @Override
     public void incrementCapacity() {
         capacity = capacity + 1;
+    }
+
+    @Override
+    public int getOpenTime() {
+        return this.openTime;
+    }
+
+    @Override
+    public void incrementOpenTime() {
+        this.openTime++;
     }
 }

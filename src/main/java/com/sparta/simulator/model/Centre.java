@@ -5,7 +5,9 @@ public class Centre implements CentreOperations {
     private String centreType;
     private boolean centreFull;
     private int capacity;
+    private int maxCapacity;
     private String courseType;
+    private int openTime;
 
     @Override
     public int getCapacity() {
@@ -31,8 +33,8 @@ public class Centre implements CentreOperations {
     }
 
     @Override
-    public boolean lowCapacity() {
-        return this.capacity < 25;
+    public boolean lowAttendance() {
+        return maxCapacity - 25 < this.capacity;
     }
 
     @Override
@@ -49,4 +51,16 @@ public class Centre implements CentreOperations {
     public String getCourseType() {
         return this.courseType;
     }
+
+    @Override
+    public int getOpenTime() {
+        return this.openTime;
+    }
+
+    @Override
+    public void incrementOpenTime() {
+        this.openTime++;
+    }
+
+
 }

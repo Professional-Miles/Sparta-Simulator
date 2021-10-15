@@ -11,11 +11,15 @@ public interface CentreOperations {
 
     public boolean isFull();
 
-    public boolean lowCapacity();
+    public boolean lowAttendance();
 
     void decrementCapacity();
 
     void incrementCapacity();
 
     String getCourseType();
+
+    int getOpenTime();
+
+    void incrementOpenTime();
 }
