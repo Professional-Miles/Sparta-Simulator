@@ -48,6 +48,12 @@ public class Sparta {
 
     /* / */
 
+    private int hubTrainees = 0;
+    private int techTrainees = 0;
+    private int campTrainees = 0;
+
+    /* / */
+
     private int cSharpTechCentres = 0;
     private int javaTechCentres = 0;
     private int dataTechCentres = 0;
@@ -386,6 +392,48 @@ public class Sparta {
 
     public void decrementBusinessTechCentres() {
         this.businessTechCentres--;
+    }
+
+    /* / */
+
+    public int getHubTrainees() {
+        return hubTrainees;
+    }
+
+    public void incrementHubTrainees() {
+        this.hubTrainees++;
+    }
+
+    public void decrementHubTrainees() {
+        this.hubTrainees--;
+    }
+
+    /* / */
+
+    public int getTechTrainees() {
+        return techTrainees;
+    }
+
+    public void incrementTechTrainees() {
+        this.techTrainees++;
+    }
+
+    public void decrementTechTrainees() {
+        this.techTrainees--;
+    }
+
+    /* / */
+
+    public int getCampTrainees() {
+        return campTrainees;
+    }
+
+    public void incrementCampTrainees() {
+        this.campTrainees++;
+    }
+
+    public void decrementCampTrainees() {
+        this.campTrainees--;
     }
 
     /* / */

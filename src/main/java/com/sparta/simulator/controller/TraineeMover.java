@@ -1,7 +1,6 @@
 package com.sparta.simulator.controller;
 
 import com.sparta.simulator.model.Sparta;
-import java.util.List;
 
 public class TraineeMover {
 
@@ -10,44 +9,61 @@ public class TraineeMover {
         Sparta sparta = Sparta.getInstance();
         int r = RandomGenerator.getRandomNumOfTrainees();
 
-        while (r > 0){
+        String rc = RandomGenerator.generateRandomCentreThree();
 
-            if (CentreAvailability.spaceAvailable(sparta.getCentres())){
-
-                String rc = RandomGenerator.generateRandomCentreThree();
-
-                if (CentreAvailability.chosenCentreExist(rc,sparta.getCentres(),0) >= 0) {
-
-                    if (rc.equals("TechCentre")){
-                        int tCIndex = CentreAvailability.techCentreType(sparta.getWaitingList().get(0).getCourseType(),sparta.getCentres())
-                        if (tCIndex >= 0){
-                           sparta.getCentres().get(tCIndex).decrementCapacity();
-                           sparta.getTrainingList().add(sparta.getWaitingList().get(0));
-                           sparta.getWaitingList().remove(0);
-
-                        } else {
-                          //  send trainee to a different centre with space
+        int added = 0;
+        while (r > 0) {
+            switch (rc) {
+                case "TrainingHub":
+                    if (sparta.getTrainingHubs() > 0) {
+                        int index = CentreAvailability.chosenCentreExistsAndSpaceAvailable(rc,sparta.getCentres());
+                        if (index > -1){
+                            TraineeToHub.addTraineeToHub(index);
+                            added++;
                         }
-                    } else {
-                        centre in List C at index CI decrement capcity.
-                                remove trainee from List T at index 0.
                     }
-
-                } else {
-
-                    send trainee to a different centre with space
-
+                    break;
+                case "TechCentre":
+                    if (sparta.getTechCentres() > 0) {
+                        int index = CentreAvailability.chosenCentreExistsAndSpaceAvailable(rc,sparta.getCentres());
+                        int techIndex = CentreAvailability.techCentreType(sparta.getWaitingList().get(0).getCourseType(),sparta.getCentres());
+                        if (index == techIndex && index != -1){
+                            TraineeToCentre.addTraineeToCentre(index);
+                            added++;
+                        }
+                    }
+                    break;
+                case "BootCamp":
+                    if (sparta.getBootCamps() > 0) {
+                        int index = CentreAvailability.chosenCentreExistsAndSpaceAvailable(rc,sparta.getCentres());
+                        if (index > -1){
+                            TraineeToCamp.addTraineeToCamp(index);
+                            added++;
+                        }
+                    }
+                    break;
+            }
+            if (added == 0) {
+                int j = 0;
+                while (sparta.getCentres().get(j).getCapacity() > 0 && sparta.getCentres().get(j).getCentreType().equals("TechCentre")) {
+                    j++;
                 }
-
-
-            } else {
-                all centres full
+                switch (sparta.getCentres().get(j).getCentreType()) {
+                    case "TrainingHub":
+                        int indexH = CentreAvailability.chosenCentreExistsAndSpaceAvailable(rc,sparta.getCentres());
+                        if (indexH > -1){
+                            TraineeToHub.addTraineeToHub(indexH);
+                        }
+                        break;
+                    case "BootCamp":
+                        int indexC = CentreAvailability.chosenCentreExistsAndSpaceAvailable(rc,sparta.getCentres());
+                        if (indexC > -1){
+                            TraineeToCamp.addTraineeToCamp(indexC);
+                        }
+                        break;
+                }
             }
             r--;
         }
     }
-
-}
-
-
 }

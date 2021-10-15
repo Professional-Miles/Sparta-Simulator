@@ -6,6 +6,7 @@ import java.util.List;
 
 public class CentreAvailability {
 
+    // doesn't work
     public static boolean spaceAvailable(List<Centre> centreList) {
 
         int fullCounter = 0;
@@ -19,7 +20,7 @@ public class CentreAvailability {
 
     public static int chosenCentreExist(String centre, List<Centre> centreList, int next) {
         int index = -1;
-        if (next > 0) {
+        if (next == 0) {
             for (int i = 0; i < centreList.size(); i++) {
                 if (centreList.get(i).getCentreType().equals(centre)) {
                     if (!centreList.get(i).isFull()) {
@@ -41,25 +42,28 @@ public class CentreAvailability {
         return index;
     }
 
-    // Based on implementation and current requirements centre will most likely never fill up
     public static int chosenCentreExistsAndSpaceAvailable(String centre, List<Centre> centreList) {
-
         int index = -1;
-        if (chosenCentreExist(centre, centreList, 0) > -1 || spaceAvailable(centreList)) {
-            return chosenCentreExist(centre, centreList, 0);
+        for (int i = 0; i < centreList.size(); i++){
+            if (centreList.get(i).getCentreType().equals(centre)){
+                if (centreList.get(i).getCapacity() > 0){
+                    index = i;
+                    break;
+                }
+            }
         }
         return index;
     }
 
     public static int techCentreType(String courseType, List<Centre> centreList) {
-        int index;
-        index = chosenCentreExist("TechCentre", centreList, 0);
-        if (!centreList.get(index).getCentreType().equals(courseType)) {
-            index = chosenCentreExist("TechCentre", centreList, index);
-            if (centreList.get(index).getCentreType().equals(courseType)) {
-                return index;
-            }
+        int index = -1;
+        index = chosenCentreExistsAndSpaceAvailable("TechCentre", centreList);
+        if (!centreList.get(index).getCourseType().equals(courseType)){
+            index = -1;
         }
         return index;
     }
+
+
+
 }

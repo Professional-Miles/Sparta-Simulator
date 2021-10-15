@@ -11,7 +11,7 @@ public class CentreGenerator {
 
         Sparta sparta = Sparta.getInstance();
 
-        if ((sparta.getMonths() % 2) == 0) {
+        if ((sparta.getCurrentMonth() % 2) == 0) {
 
             //check if there are 2 boot camps
             if (sparta.tooManyBoots()) {
@@ -19,7 +19,7 @@ public class CentreGenerator {
 
                 if (chosenCentre.equals("TrainingHub")) {
                     Random rand = new Random();
-                    int trainingHubNum = rand.nextInt(((4 - 1)) + 1) + 1;
+                    int trainingHubNum = rand.nextInt(((3 - 1)) + 1) + 1;
                     while (0 < trainingHubNum) {
                         TrainingHubCreator.openTrainingHub();
                         trainingHubNum--;
@@ -33,7 +33,7 @@ public class CentreGenerator {
 
                 if (chosenCentre.equals("TrainingHub")) {
                     Random rand = new Random();
-                    int tHubNum = rand.nextInt(((4 - 1)) + 1) + 1;
+                    int tHubNum = rand.nextInt(((3 - 1)) + 1) + 1;
                     while (0 < tHubNum) {
                         TrainingHubCreator.openTrainingHub();
                         tHubNum--;
@@ -46,7 +46,7 @@ public class CentreGenerator {
             }
         } else {
             Random rand = new Random();
-            int tHubNum = rand.nextInt(((4 - 1)) + 1) + 1;
+            int tHubNum = rand.nextInt(((3 - 1)) + 1) + 1;
             while (0 < tHubNum) {
                 TrainingHubCreator.openTrainingHub();
                 tHubNum--;

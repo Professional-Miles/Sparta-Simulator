@@ -1,5 +1,8 @@
 package com.sparta.simulator.app;
 
+import com.sparta.simulator.centreopening.CentreGenerator;
+import com.sparta.simulator.controller.TraineeMover;
+import com.sparta.simulator.maketrainee.TraineeGenerator;
 import com.sparta.simulator.model.Sparta;
 import com.sparta.simulator.view.UserInput;
 import org.apache.log4j.Logger;
@@ -18,7 +21,18 @@ public class SimulatorDriver {
 
         for (int i = 0; i < sparta.getMonths(); i++) {
 
-            //ToDo
+            System.out.println("\nCurrent month = " + sparta.getCurrentMonth());
+            CentreGenerator.openCentre();
+            TraineeGenerator.createTrainee();
+            System.out.println("Before moving =" + sparta.getCentres());
+            System.out.println("Hubs = "+ sparta.getTrainingHubs());
+            System.out.println("Centres = "+ sparta.getTechCentres());
+            System.out.println("Camps = " + sparta.getBootCamps());
+            System.out.println("Waiting Trainees = " + sparta.getWaitingTrainees());
+            TraineeMover.moveTrainee();
+            System.out.println("After moving = "+sparta.getCentres());
+            System.out.println("Training Trainees = "+ sparta.getTrainingTrainees());
+            sparta.incrementCurrentMonth();
 
         }
     }

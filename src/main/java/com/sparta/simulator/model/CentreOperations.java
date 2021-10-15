@@ -16,4 +16,6 @@ public interface CentreOperations {
     void decrementCapacity();
 
     void incrementCapacity();
+
+    String getCourseType();
 }
