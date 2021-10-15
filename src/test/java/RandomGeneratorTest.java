@@ -1,6 +1,4 @@
-import com.sparta.simulator.model.Centre;
-import com.sparta.simulator.model.RandomGenerator;
-import com.sparta.simulator.model.TechCentre;
+import com.sparta.simulator.controller.RandomGenerator;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,12 +12,44 @@ public class RandomGeneratorTest {
     }
 
     @Test
-    public void generateRandomCentre_ReturnsACorrectCentre() {
-        RandomGenerator randomGenerator = new RandomGenerator();
-        Centre centre = randomGenerator.generateRandomCentre();
-        Centre c = centre;
+    public void generateRandomCentreThree_ReturnsACorrectCentreString() {
+        String generatedRandomCentre = RandomGenerator.generateRandomCentreThree();
+        String matchedString = "";
 
-        assertEquals(c,centre);
+        if ("TechCentre".equals(generatedRandomCentre) || "TrainingHub".equals(generatedRandomCentre) || "BootCamp".equals(generatedRandomCentre)) {
+            matchedString = generatedRandomCentre;
+        }
+
+        assertEquals(matchedString,generatedRandomCentre);
+    }
+
+    @Test
+    public void generateRandomCentreTwo_ReturnsACorrectCentreString() {
+        String generatedRandomCentre = RandomGenerator.generateRandomCentreThree();
+        String matchedString = "";
+
+        if ("TechCentre".equals(generatedRandomCentre) || "TrainingHub".equals(generatedRandomCentre)) {
+            matchedString = generatedRandomCentre;
+        }
+
+        assertEquals(matchedString,generatedRandomCentre);
 
     }
+
+    @Test
+    public void generateRandomCentreTwo_DoesNotReturnAnIncorrectString() {
+        String generatedRandomCentre = RandomGenerator.generateRandomCentreTwo();
+        String expectedWrongString = "randomstring";
+
+        assertNotEquals(expectedWrongString,generatedRandomCentre);
+    }
+
+    @Test
+    public void generateRandomCentreThree_DoesNotReturnAnIncorrectString() {
+        String generatedRandomCentre = RandomGenerator.generateRandomCentreThree();
+        String expectedWrongString = "beststringever";
+
+        assertNotEquals(expectedWrongString,generatedRandomCentre);
+    }
+
 }
