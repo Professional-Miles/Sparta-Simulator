@@ -454,6 +454,14 @@ public class Sparta {
         return traineesOnBench;
     }
 
+    public void incrementTraineesOnBench() {
+        this.traineesOnBench++;
+    }
+
+    public void decrementTraineesOnBench() {
+        this.traineesOnBench--;
+    }
+
     /* / */
 
     public int getUnhappyClients() {

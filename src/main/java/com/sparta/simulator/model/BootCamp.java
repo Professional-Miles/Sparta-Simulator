@@ -79,4 +79,12 @@ public class BootCamp extends Centre {
     public void incrementOpenTime() {
         this.openTime++;
     }
+
+    public void incrementLAMonth(){
+        this.monthCount++;
+    }
+
+    public void decrementLAMonth(){
+        this.monthCount--;
+    }
 }

@@ -22,4 +22,6 @@ public interface CentreOperations {
     int getOpenTime();
 
     void incrementOpenTime();
+
+
 }

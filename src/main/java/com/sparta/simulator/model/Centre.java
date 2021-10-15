@@ -8,6 +8,7 @@ public class Centre implements CentreOperations {
     private int maxCapacity;
     private String courseType;
     private int openTime;
+    private int monthCount;
 
     @Override
     public int getCapacity() {
@@ -60,6 +61,18 @@ public class Centre implements CentreOperations {
     @Override
     public void incrementOpenTime() {
         this.openTime++;
+    }
+
+    public int getMonthCount() {
+        return monthCount;
+    }
+
+    public void incrementLAMonth(){
+        this.monthCount++;
+    }
+
+    public void decrementLAMonth(){
+        this.monthCount--;
     }
 
 
