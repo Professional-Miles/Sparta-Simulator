@@ -1,66 +1,88 @@
 package com.sparta.simulator.model;
 
-import java.util.List;
-import java.util.Objects;
 
-public class Trainee implements TraineeOperation{
-    int count;
-    enum CourseType {
-        JAVA, CSHARP, DEVOPS, BUSINESS
-    }
-    CourseType courseType;
-    int id;
+public class Trainee implements TraineeOperations {
 
-    public Trainee(CourseType courseType, int id) {
-        this.courseType = courseType;
+    private int id;
+    private String courseType;
+    private int trainingTime;
+    private boolean isWaiting;
+    private boolean isTraining;
+    private boolean isBenched;
+    private boolean isWorking;
+
+    public Trainee(int id, String courseType) {
         this.id = id;
+        this.courseType = courseType;
+        this.trainingTime = 1;
+        this.isWaiting = true;
+        this.isTraining = false;
+        this.isBenched = false;
+        this.isWorking = false;
     }
 
-    public CourseType getCourseType() {
+
+    @Override
+    public boolean isTraining() {
+        return isTraining;
+    }
+
+    @Override
+    public boolean isWaiting() {
+        return isWaiting;
+    }
+
+    @Override
+    public boolean isBenched() {
+        return isBenched;
+    }
+
+    @Override
+    public boolean isWorking() {
+        return isWorking;
+    }
+
+    @Override
+    public void setTraining() {
+        this.isWaiting = false;
+        this.isTraining = true;
+    }
+
+    @Override
+    public void setWaiting() {
+        this.isTraining = false;
+        this.isWaiting = true;
+    }
+
+    @Override
+    public void setBenched() {
+        this.isTraining = false;
+        this.isBenched = true;
+    }
+
+    @Override
+    public void setWorking() {
+        this.isWorking = true;
+        this.isBenched = false;
+    }
+
+    @Override
+    public String getCourseType() {
         return courseType;
     }
 
-    public void setCourseType(CourseType courseType) {
-        this.courseType = courseType;
+    @Override
+    public int getTrainingTime() {
+        return trainingTime;
     }
 
+    @Override
+    public void incrementTrainingTime() {
+        trainingTime = trainingTime + 1;
+    }
+
+    @Override
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void incrementTrainee(){
-        this.count ++;
-    }
-
-    @Override
-    public List<Trainee> getTrainees() {
-        return null;
-    }
-
-    @Override
-    public void setTrainees(List<Trainee> trainees) {
-
-    }
-
-    @Override
-    public void addTrainees(Trainee trainee, List<Trainee> trainees) {
-
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Trainee trainee = (Trainee) o;
-        return courseType == trainee.courseType;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(courseType);
     }
 }

@@ -1,5 +1,6 @@
 package com.sparta.simulator.view;
 
+import com.sparta.simulator.model.Sparta;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import java.util.NoSuchElementException;
@@ -11,6 +12,7 @@ public class UserInput {
     private static final Logger log = Logger.getLogger("User input logger.");
 
     public static int getNumOfMonths(){
+        Sparta sparta = Sparta.getInstance();
         int num = 0;
         boolean status = true;
         while (status) {
