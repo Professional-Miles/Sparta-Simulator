@@ -23,26 +23,26 @@ public class SimulatorDriver {
             sparta.setMonths(UserInput.getNumOfMonths());
             for (int i = 0; i < sparta.getMonths(); i++) {
 
-                System.out.println("\nCurrent month = " + sparta.getCurrentMonth());
+                System.out.println("\n-------------------------------------------------------------------------\nCurrent month = " + sparta.getCurrentMonth());
 
 
                 CentreGenerator.openCentre();
                 TraineeGenerator.createTrainee();
 
                 System.out.println("Trainees generated = " + sparta.getIdCounter());
-                System.out.println("Before moving =" + sparta.getCentres());
-                System.out.println("Hubs = " + sparta.getTrainingHubs());
-                System.out.println("Centres = " + sparta.getTechCentres());
-                System.out.println("Camps = " + sparta.getBootCamps());
-                System.out.println("Waiting Trainees = " + sparta.getWaitingList().size());
+                System.out.println("\nCentre pre-allocation =" + sparta.getCentres());
+                System.out.println("\nNumber of Training Hubs = " + sparta.getTrainingHubs());
+                System.out.println("Number of Tech Centres = " + sparta.getTechCentres());
+                System.out.println("Number of Boot Camps = " + sparta.getBootCamps());
+                System.out.println("Trainees in Waiting List = " + sparta.getWaitingList().size());
 
                 TraineeMover.moveTrainee();
                 CentreAttendanceLow.lowAttendanceCheck();
 
-                System.out.println("After moving = " + sparta.getCentres());
-                System.out.println("Training Trainees = " + sparta.getTrainingList().size());
-                System.out.println("Open centres = " + sparta.getCentres().size());
-                System.out.println("Closed Centres = " + sparta.getClosedCentres());
+                System.out.println("\nAfter trainee allocation = " + sparta.getCentres());
+                System.out.println("\nTrainees in training centres = " + sparta.getTrainingList().size());
+                System.out.println("Number of currently open training centres = " + sparta.getCentres().size());
+                System.out.println("Number of closed Training centres = " + sparta.getClosedCentres());
 
                 IncrementOpenTime.hasBeenOpen();
                 IncrementTrainingTime.hasBeenTraining();
